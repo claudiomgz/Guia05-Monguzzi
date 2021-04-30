@@ -19,7 +19,7 @@ public boolean Contratar(Contratable c) throws AlquilerNoEntregadoException {
 				.filter(s -> s instanceof Alquiler && !s.finalizado())
 				.count();
 		if(count > 2) {
-			throw new AlquilerNoEntregadoException("Tiene mas de dos alquileres sin devolver por lo que no puede alquilar otro.");
+			throw new AlquilerNoEntregadoException("Usted ya tiene más de 2 alquileres pendientes, devuelva uno para alquilar otro");
 		} else {
 			itemsContratados.add(c);
 			return true;
